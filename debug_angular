@@ -1,0 +1,43 @@
+Debugging Angular
+-----------------
+
+1. use json pipe in html
+
+ <label>name:
+    <input [(ngModel)]="hero.name" placeholder="name"/>
+    <div>{{hero | json}}</div>  --> Like This.
+  </label>
+  
+2. Add below in tsconfig.json
+
+"sourceMap": true,
+
+place "debugger" statement where ever you want to debug. Example:
+
+getHero(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    debugger
+    this.heroService.getHero(id)
+      .subscribe(hero => this.hero = hero);
+  }
+
+3. Install Augury chrome plugin and check it
+
+4. Enable Log by running 
+npm install --save angular2-logger
+
+app.module.ts
+
+import {Logger} from "angular2-logger/core";
+  providers: [Logger],
+  
+  dashboard.component.ts
+  ----------------------
+  
+  constructor(private heroService: HeroService,private logger: Logger) { }
+  
+   ngOnInit() {
+    this.logger.info("ngOnInit - invoked");
+  }
+  
+  check in browser F12 Console.
