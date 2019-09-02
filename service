@@ -1,0 +1,37 @@
+Create a HeroService 
+
+ng g s HeroService
+
+
+heroService.ts
+--------------
+import { HEROES } from './mock-heroes';
+
+ getHeroes(): Observable<Hero[]>{
+    this.messageService.addMessage('HeroService: fetched heroes');
+    return of(HEROES);
+  }
+  
+ mock-heroes.ts
+ --------------
+import {Hero} from './hero';
+export const HEROES : Hero[]=[{id:1,name:'Dr. Nice'},{ id: 12, name: 'Narco' }];
+
+hero.ts
+-------
+export class Hero {
+    id: number;
+    name :string;
+}
+
+Invoking heroService 
+-------------------
+export class DashboardComponent implements OnInit {
+  heroes: Hero[] = [];
+  constructor(private heroService: HeroService) { }
+
+  getHeroes(): void {
+      this.heroService.getHeroes()
+        .subscribe(heroes => this.heroes = heroes.slice(1, 5));
+    }
+  }
