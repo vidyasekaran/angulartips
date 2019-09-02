@@ -1,0 +1,46 @@
+Adding reactive forms with validation
+
+app.module.ts
+-------------
+import { ReactiveFormsModule  }   from '@angular/forms';
+imports: [ReactiveFormsModule]
+
+flight.component.html
+----------------------
+ <form [formGroup]="angForm" novalidate>
+    <div class="form-group">
+    <label class="col-md-4">Product Name</label>
+    <input type="text" class="form-control" formControlName="ProductName" #ProductName />
+     </div>
+     
+ <div *ngIf="angForm.controls['ProductName'].invalid && (angForm.controls['ProductName'].dirty || angForm.controls['ProductName'].touched)" class="alert alert-danger">
+   <div *ngIf="angForm.controls['ProductName'].errors.required">
+    Product Name is required.
+    </div>    
+ </div>
+ <div class="form-group">
+ 
+ <button type="submit" class="btn btn-primary" [disabled]="angForm.pristine || angForm.invalid" 
+    (click) = "addProduct(ProductName.value, ProductDescription.value, ProductPrice.value)">
+     Create Product
+  </button>
+ </form>
+ 
+flight.component.ts
+-------------------
+ items = [];
+  angForm: FormGroup;
+  constructor(private fb: FormBuilder) {
+    this.createForm();
+  }  
+  createForm() {
+    this.angForm = this.fb.group({
+      ProductName: ['', Validators.required ],
+      ProductDescription: ['', Validators.required ],
+      ProductPrice: ['', Validators.required ]
+    });
+  }
+  
+  addProduct(ProductName, ProductDescription, ProductPrice) {
+    Product prod = new Product(this.ProductName, this.ProductDescription, this.ProductPrice);
+     this.items.push(product);}
