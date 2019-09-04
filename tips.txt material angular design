@@ -17,13 +17,12 @@ imports: [MatListModule]
 
 2. Add below in HTML (cruise.component.html)
 
-        <mat-list>
-          <mat-list-item>Item 1</mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item>Item 2</mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item>Item 3</mat-list-item>
-        </mat-list>
+<mat-list>
+      <mat-list-item *ngFor="let cruise of cruise; last as last">
+          <h4 mat-line>{{ cruise.company }}</h4>             
+          <mat-divider [inset]="true" *ngIf="!last"></mat-divider>            
+       </mat-list-item>
+     </mat-list>
 
 --
 
