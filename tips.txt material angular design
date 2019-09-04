@@ -3,6 +3,29 @@ for angular material design
 https://material.io/components/image-lists/#
 https://material.angular.io/components/grid-list/overview
 
+Currently learning angular material.
+
+I tried below 2 urls but getting errors (https://material.io/components/image-lists/#,https://material.angular.io/components/grid-list/overview)
+This works fine for angular - https://www.tutorialspoint.com/angular_material7/angular_material7_list.htm
+-----
+I started with Layouts -Divider - steps.
+
+1. add below imports in  app.module.ts
+import {MatListModule} from '@angular/material'
+imports: [MatListModule]
+
+2. Add below in HTML (cruise.component.html)
+
+        <mat-list>
+          <mat-list-item>Item 1</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Item 2</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Item 3</mat-list-item>
+        </mat-list>
+
+--
+
 to larn jasmine
 https://youtu.be/yG4FH60fhUE
 
