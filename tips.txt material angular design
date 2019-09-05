@@ -67,15 +67,19 @@ imports:  [MatCardModule,MatButtonModule]
 
 --
 
-to larn jasmine
-https://youtu.be/yG4FH60fhUE
+1) To learn jasmine
+      a) https://youtu.be/yG4FH60fhUE   (unit testing - general)
+      b) https://codecraft.tv/courses/angular/unit-testing/model-driven-forms/ (unit testing reactive forms).
 
+2. Understanding @Input, @Output and EventEmitter in Angular
+      a) https://medium.com/@foolishneo/understanding-input-output-and-eventemitter-in-angular-c1aeb9fff594 (good).
+      b) https://dzone.com/articles/understanding-output-and-eventemitter-in-angular (ok).
 
-2.For any angular resource go to 
+3.For any angular resource go to 
 https://angular.io/resources, https://ngx.tools/#/search
 
 
-3. For login we used - shows login page, checks login in mysql and redirects to tour page.
+4. For login we used - shows login page, checks login in mysql and redirects to tour page.
 hit >>http://localhost:3000/
 
 https://codeshack.io/basic-login-system-nodejs-express-mysql/
