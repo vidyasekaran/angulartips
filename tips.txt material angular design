@@ -11,7 +11,7 @@ https://material.angular.io/components/divider/api
 -----
 I started with Layouts -Divider - steps.
 
-I. Divider
+I. Divider (is a component that allows for Material styling of a line separator with various orientation options).
 
 1. add below imports in  app.module.ts
 import {MatListModule} from '@angular/material'
@@ -26,7 +26,7 @@ imports: [MatListModule]
        </mat-list-item>
      </mat-list>
      
-II. Card
+II. Card (is a content container for text, photos, and actions in the context of a single subject)
 
 1. add below imports in  app.module.ts
 import {MatCardModule, MatButtonModule} from '@angular/material'
@@ -64,6 +64,32 @@ imports:  [MatCardModule,MatButtonModule]
       <button mat-button>SHARE</button>
     </mat-card-actions>
   </mat-card>
+  
+  III. Expansion Panel provides an expandable details-summary view.
+  
+  1. add below imports in  app.module.ts
+  
+import {MatExpansionModule, MatInputModule} from '@angular/material'
+imports: [MatExpansionModule,MatInputModule]
+
+2.  Add below HTML (cruise.component.html)
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+     <mat-panel-title>
+        Personal data
+     </mat-panel-title>
+     <mat-panel-description>
+        Type name and age
+     </mat-panel-description>
+  </mat-expansion-panel-header>
+  <mat-form-field>
+     <input matInput placeholder="Name">
+  </mat-form-field>
+  <mat-form-field>
+     <input matInput placeholder="Age">
+  </mat-form-field>
+</mat-expansion-panel>
 
 --
 
