@@ -91,6 +91,32 @@ imports: [MatExpansionModule,MatInputModule]
   </mat-form-field>
 </mat-expansion-panel>
 
+
+Multiple expansion-panels can be combined into an accordion. The multi="true" input allows the expansions state to be set 
+independently of each other. When multi="false" (default) just one panel can be expanded at a given time:
+
+<mat-accordion>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      This is the expansion 1 title
+    </mat-expansion-panel-header>
+
+    This the expansion 1 content
+
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      This is the expansion 2 title
+    </mat-expansion-panel-header>
+
+    This the expansion 2 content
+
+  </mat-expansion-panel>
+
+</mat-accordion>
+
 --
 
 1) To learn jasmine
