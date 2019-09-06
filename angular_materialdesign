@@ -1,1 +1,211 @@
 
+URLs used for angular material design
+
+https://material.io/components/image-lists/#
+https://material.angular.io/components/grid-list/overview
+
+Currently learning angular material.
+
+I tried below 2 urls but getting errors (https://material.io/components/image-lists/#,https://material.angular.io/components/grid-list/overview)
+This works fine for angular - https://www.tutorialspoint.com/angular_material7/angular_material7_list.htm so am using this with below url
+https://material.angular.io/components/divider/api
+-----
+I started with Layouts -Divider - steps.
+
+I. Divider (is a component that allows for Material styling of a line separator with various orientation options).
+
+1. add below imports in  app.module.ts
+import {MatListModule} from '@angular/material'
+imports: [MatListModule]
+
+2. Add below in HTML (cruise.component.html)
+
+<mat-list>
+      <mat-list-item *ngFor="let cruise of cruise; last as last">
+          <h4 mat-line>{{ cruise.company }}</h4>             
+          <mat-divider [inset]="true" *ngIf="!last"></mat-divider>            
+       </mat-list-item>
+     </mat-list>
+     
+II. Card (is a content container for text, photos, and actions in the context of a single subject)
+
+1. add below imports in  app.module.ts
+import {MatCardModule, MatButtonModule} from '@angular/material'
+imports:  [MatCardModule,MatButtonModule]
+
+2. Add app.component.css
+
+ .example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+2. Add below HTML (cruise.component.html)
+
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+  
+  III. Expansion Panel provides an expandable details-summary view.
+  
+  1. add below imports in  app.module.ts
+  
+import {MatExpansionModule, MatInputModule} from '@angular/material'
+imports: [MatExpansionModule,MatInputModule]
+
+2.  Add below HTML (cruise.component.html)
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+     <mat-panel-title>
+        Personal data
+     </mat-panel-title>
+     <mat-panel-description>
+        Type name and age
+     </mat-panel-description>
+  </mat-expansion-panel-header>
+  <mat-form-field>
+     <input matInput placeholder="Name">
+  </mat-form-field>
+  <mat-form-field>
+     <input matInput placeholder="Age">
+  </mat-form-field>
+</mat-expansion-panel>
+
+
+Multiple expansion-panels can be combined into an accordion. The multi="true" input allows the expansions state to be set 
+independently of each other. When multi="false" (default) just one panel can be expanded at a given time:
+
+<mat-accordion>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      This is the expansion 1 title
+    </mat-expansion-panel-header>
+
+    This the expansion 1 content
+
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      This is the expansion 2 title
+    </mat-expansion-panel-header>
+
+    This the expansion 2 content
+
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+IV. Grid List (mat-grid-list is a two-dimensional list view that arranges cells into grid-based layout).
+
+1. add below imports in  app.module.ts
+import {MatGridListModule} from '@angular/material'
+imports: [MatGridListModule]
+
+2. Add below HTML (cruise.component.html)
+
+<mat-grid-list cols = "4" rowHeight = "100px">
+  <mat-grid-tile   [colspan] = "3"  [rowspan] = "1">1  </mat-grid-tile>
+  <mat-grid-tile   [colspan] = "1"  [rowspan] = "2">2  </mat-grid-tile>
+  <mat-grid-tile   [colspan] = "1"  [rowspan] = "1">3  </mat-grid-tile>
+  <mat-grid-tile   [colspan] = "2"  [rowspan] = "1">4  </mat-grid-tile>
+</mat-grid-list>
+
+v. Mat List - <mat-list> is a container component that wraps and formats a series of line items. 
+   As the base list component, it provides Material Design styling, but no behavior of its own.
+   
+   1. add below imports in  app.module.ts
+      import {MatListModule} from '@angular/material'
+      imports: [MatListModule]
+
+   2. Add below HTML (cruise.component.html)
+     <mat-list role="list">
+      <mat-list-item role="listitem">Item 1</mat-list-item>
+      <mat-list-item role="listitem">Item 2</mat-list-item>
+      <mat-list-item role="listitem">Item 3</mat-list-item>
+     </mat-list>      
+     
+VI. Stepper (Angular Material's stepper provides a wizard-like workflow by dividing content into logical steps).
+
+1. add below imports in  app.module.ts
+import {MatStepperModule} from '@angular/material'
+imports: [MatStepperModule]
+
+2.  Add below HTML (cruise.component.html)
+
+<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+</button>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill out your name</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Fill out your address</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Address" formControlName="secondCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    You are now done.
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+
+3. Add below in cruise.component.ts
+
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  
+  constructor(private travelService: TravelService,private _formBuilder: FormBuilder) { }
+
+  ngOnInit() {
+
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+    }
