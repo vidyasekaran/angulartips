@@ -209,3 +209,19 @@ imports: [MatStepperModule]
       secondCtrl: ['', Validators.required]
     });
     }
+    
+  VII. Tabs (Angular Material tabs organize content into separate views where only one view can be visible at a time).
+  
+  1. add below imports in  app.module.ts
+  
+     import {MatTabsModule} from '@angular/material'
+     imports: [MatTabsModule]
+     
+2.  Add below HTML (cruise.component.html)
+
+<mat-tab-group>
+  <mat-tab label="First"> Content 1 </mat-tab>
+  <mat-tab label="Second"> Content 2 </mat-tab>
+  <mat-tab label="Third"> Content 3 </mat-tab>
+</mat-tab-group>
+
