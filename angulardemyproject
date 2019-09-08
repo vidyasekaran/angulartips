@@ -24,3 +24,10 @@ ng serve and go to Developers tools F12 and go to Element - head -styles you wil
 For any error check out  else check out
 https://www.udemy.com/the-complete-guide-to-angular-2/learn/lecture/6709112#questions/8079942
 
+
+Setting up emmet in visual studio code
+>
+
+To install emmet for quick html typing (https://emmet.io/download/)
+
+https://docs.emmet.io/cheatsheet-a5.pdf
