@@ -1,0 +1,13 @@
+Starting new angular project
+ng new receipeApp - select CSS - no routing
+
+Adding bootstrap locally for this project
+-> npm --install save bootstrap@3
+
+Go to angular.json find "styles and add bootstrap.min.css"  after npm install, it will be found under "node_modules" directory.
+
+ "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ]
+            
