@@ -34,5 +34,23 @@ https://docs.emmet.io/cheatsheet-a5.pdf
 
 Starting from here -> https://www.udemy.com/the-complete-guide-to-angular-2/learn/lecture/6656014#overview
 
-To create a component without spec file
+Structure the components like this 
+
+header
+   ->recipes
+         recipes-list
+         recipes-detail
+   ->shopping-list
+         shopping-edit
+         
+To create a component without spec file and have recipes-list and recipes-detail inside it)
 > ng g c recipes --spec false
+
+ng g c receipes/recipes-list --spec false
+ng g c recipes/recipes-detail --spec false
+
+
+Create shopping-list and shopping-edit inside it.
+ng g c shopping-list --spec false
+ng g c shopping-list/shopping-edit --spec false
+
