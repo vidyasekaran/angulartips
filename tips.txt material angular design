@@ -1,3 +1,8 @@
+Shared data between components 
+
+https://angularfirebase.com/lessons/sharing-data-between-angular-components-four-methods/
+
+
 1) To learn jasmine
       a) https://youtu.be/yG4FH60fhUE   (unit testing - general)
       b) https://codecraft.tv/courses/angular/unit-testing/model-driven-forms/ (unit testing reactive forms).
