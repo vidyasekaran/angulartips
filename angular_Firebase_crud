@@ -1,0 +1,25 @@
+Followed steps from
+   https://www.freakyjolly.com/angular-7-6-crud-operations-using-firebase-and-firestore-database-in-angular-application-tutorial/
+   
+1. Got to https://firebase.google.com/  and click on getting started -> in next page -> click on "Add Project" 
+-> entered "angular crud" -> click "continue" -> Register a Web App -> enter name "angular crud" -> Pickup 
+the details from Add Firebase SDK and add it in environments -> environment.ts file.
+
+export const environment = {
+    production: false,
+    firebase: {
+      apiKey: "",
+      authDomain: "",
+      databaseURL: "",
+      projectId: "",
+      storageBucket: "",
+      messagingSenderId: ""
+    }
+   };
+   
+
+   
+ 2. go to local angular project 
+   D:\angular\angularcrud> npm install --save firebase @angular/fire
+   
+ follow rest from   https://www.freakyjolly.com/angular-7-6-crud-operations-using-firebase-and-firestore-database-in-angular-application-tutorial/
