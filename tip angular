@@ -25,3 +25,7 @@ https://angular.io/resources, https://ngx.tools/#/search
 hit >>http://localhost:3000/
 
 https://codeshack.io/basic-login-system-nodejs-express-mysql/
+
+===
+Angular-Spring boot websockets communication
+https://spring.io/guides/gs/messaging-stomp-websocket/
