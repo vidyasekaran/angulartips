@@ -1,0 +1,45 @@
+<h2 *ngIf="displayName">
+  Simple If
+</h2>
+
+<h2 *ngIf="displayName; else elseBlock">
+   if - else block - show me if displayName is true  else show code in #elseBlock
+</h2>
+
+<ng-template #elseBlock>
+<h2>
+  If displayName is false show else block
+</h2>
+</ng-template>
+
+<!-- If -then- else block -->
+
+<div *ngIf="displayName; then thenBlock1; else elseBlock1"></div>
+
+
+<ng-template #thenBlock1>
+  If displayName is true - display Me
+</ng-template>
+
+
+<ng-template #elseBlock1>
+  If displayName is false - display Me
+</ng-template>
+
+
+<!-- ng Switch -->
+
+<div [ngSwitch]="color" >
+<div *ngSwitchCase ="'red'" > You picked Red Color </div>
+<div *ngSwitchCase="'blue'" > You picked Blue Color</div>
+<div *ngSwitchDefault>Default one</div>
+
+</div>
+
+<!-- ngFor-->
+
+<div *ngFor="let color of colors; index as i;first as f;odd as o; even as e">
+  <h3>{{e}} {{o}} {{f}} {{i}} {{color}}</h3>
+</div>
+<h2> {{message}} </h2>
+<app-child (childEvent) ="message=$event" [parentData]="name"> </app-child>
