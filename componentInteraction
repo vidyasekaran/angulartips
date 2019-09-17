@@ -1,0 +1,66 @@
+create child component
+ng g c child
+
+Child to receive a string from Parent
+-------------------------------------
+
+in child.component.ts
+
+@Component({
+  selector: 'app-child',
+  templateUrl: './child.component.html',
+  styleUrls: ['./child.component.css']
+})
+export class ChildComponent implements OnInit 
+{
+  @Input()
+  public parentData;
+}
+
+2. In Parent app.component.ts - define name variable. 
+
+export class AppComponent {
+  public name ="Vishwas";
+  
+  in app.component.html - property bind  parentData for which @Input is defined in child.component.ts
+  
+  <app-child [parentData]="name"> </app-child>
+  
+  
+Child to Send a string to Parent
+--------------------------------
+1. In child component child.component.ts annotate  @Output for a property  childEvent and a method ex: fireEvent()
+
+@Component({
+  selector: 'app-child',
+  templateUrl: './child.component.html',
+  styleUrls: ['./child.component.css']
+})
+export class ChildComponent implements OnInit {
+  
+@Output()
+public childEvent = new EventEmitter();
+
+fireEvent()
+{
+\\This message maps to   parent component $event <app-child (childEvent) ="message=$event" 
+   
+   this.childEvent.emit('Hey CodeEvoluation');  
+   }
+    
+Example: <app-child (childEvent) ="message=$event" [parentData]="name"> </app-child>
+
+2. In child-component.html define a button and assign fireEvent() method to click event which
+<button (click) ="fireEvent()">Press</button> 
+
+
+3. In the parent app.component.html bind the (childEvent) property (which is nothig but the property defined in child.component.ts) 
+and assign  $event (which refers child property value - to message property of parent 
+ (@Output() public childEvent = new EventEmitter()).
+
+<app-child (childEvent) ="message=$event" [parentData]="name"> </app-child>
+
+4. app.component.ts  define   message 
+
+export class AppComponent {
+public message="";
