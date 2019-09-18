@@ -119,9 +119,22 @@ JSON for Person class
   }
 }
 
+7. Number pipe
+---------------
 <h2>{{5.678 | number : '1.2-3' }}</h2>   -- Displays  5.678
 <h2>{{5.678 | number : '3.4-5' }}</h2>   -- Displays  005.6780
 <h2>{{5.678 | number : '3.1-2' }}</h2>   -- Displays  005.68
+
+8. Percentage pipe
+---------------
+<h2>{{0.25 | percent }}</h2>  - Displays 25%
+
+9. Currency Pipe
+----------------
+
+<h2>{{0.25 | currency }}</h2>  -- displays $0.25  (default USD).
+
+<h2>{{0.25 | currency :'GBP' }}</h2>  -- displays £0.25 Pounds
 
 
 URL Reference : https://www.youtube.com/watch?v=y8lwG8IM82k&list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ&index=16
