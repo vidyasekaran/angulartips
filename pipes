@@ -2,11 +2,21 @@ Pipes allows us to transform data before displaying them on the screen.
 
 Some of the buildin pipes angular provides.
 
+name = "codevolution";
+
 a. Transform name value to lowercase
    <h2 > {{ name | lowercase }}</h2>
 
 b. Transform name value to uppercase
    <h2 > {{ name | uppercase }}</h2>
+   
+c. Transform name value to TitleCase - displays first letter of every word in capital letter
+   <h2 > {{ name | titlecase }}</h2>
+   
+d. Returns a String starting from index 3 -  so "codevolution become  evolution"   
+   <h2 > {{ name | slice:3 }}</h2>
+   
+   
    
    
    
