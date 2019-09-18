@@ -136,6 +136,20 @@ JSON for Person class
 
 <h2>{{0.25 | currency :'GBP' }}</h2>  -- displays £0.25 Pounds
 
+<h2>{{0.25 | currency : 'GBP' : 'code' }}</h2>  -- displays GBP0.25
+
+10. Date Pipe
+-------------
+<h2>{{dob}}</h2>  -- displays  Tue Oct 17 1950 00:00:00 GMT+0530 (India Standard Time)
+<h2>{{dob | date : 'short'}}</h2> -- displays - 10/17/50, 12:00 AM
+<h2>{{dob | date : 'shortDate'}}</h2> -- displays - 10/17/50
+<h2>{{dob | date : 'shortTime'}}</h2> -- displays - 12:00 AM
+
+
+
+
+
+
 
 URL Reference : https://www.youtube.com/watch?v=y8lwG8IM82k&list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ&index=16
 https://www.concretepage.com/angular-2/angular-2-json-pipe-example#jsonpipe
