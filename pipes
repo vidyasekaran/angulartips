@@ -1,0 +1,12 @@
+Pipes allows us to transform data before displaying them on the screen.
+
+Some of the buildin pipes angular provides.
+
+a. Transform name value to lowercase
+   <h2 > {{ name | lowercase }}</h2>
+
+b. Transform name value to uppercase
+   <h2 > {{ name | uppercase }}</h2>
+   
+   
+   
