@@ -57,16 +57,21 @@ export class Address {
 
 export class AppComponent {
    address1 = new Address('Dhananjaypur', 'Varanasi', 'India');
-	address2 = new Address('Moonsi', 'Bhadohi', 'India');
-   
+	address2 = new Address('Moonsi', 'Bhadohi', 'India');   
 	addressArray = [this.address1, this.address2];
- 
+	nameObj = new Name('Narendra', 'Modi');
+  	dob = new Date(1950, 9, 17);
+  	person = new Person(100, this.nameObj, this.dob, this.address1);
  }
  
 5. Define in app.component.html 
 
 <pre> {{address1 | json}} </pre>
-<pre> {{addressArray | json}} </pre>  or <pre> <div [innerHTML]="addressArray | json"></div> </pre> 
+<pre> {{addressArray | json}} </pre>  or <pre> <div [innerHTML]="addressArray | json"></div> </pre>
+<b>JSON for Person Name Property</b>
+<pre> {{person.pname | json}} </pre>
+<b>JSON for Person class</b>
+<pre>{{person | json}}</pre>
  
 
 6. Displays in Output
@@ -90,6 +95,29 @@ export class AppComponent {
     "country": "India"
   }
 ]
+
+JSON for Person Name Property
+
+ {
+  "fname": "Narendra",
+  "lname": "Modi"
+} 
+
+JSON for Person class
+
+{
+  "id": 100,
+  "pname": {
+    "fname": "Narendra",
+    "lname": "Modi"
+  },
+  "dob": "1950-10-16T18:30:00.000Z",
+  "address": {
+    "vill": "Dhananjaypur",
+    "district": "Varanasi",
+    "country": "India"
+  }
+}
 
 
 URL Reference : https://www.youtube.com/watch?v=y8lwG8IM82k&list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ&index=16
