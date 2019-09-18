@@ -145,6 +145,17 @@ JSON for Person class
 <h2>{{dob | date : 'shortDate'}}</h2> -- displays - 10/17/50
 <h2>{{dob | date : 'shortTime'}}</h2> -- displays - 12:00 AM
 
+<h2> Medium Date</h2>
+
+<h2>{{dob | date : 'medium'}}</h2> --displays - Oct 17, 1950, 12:00:00 AM
+<h2>{{dob | date : 'mediumDate'}}</h2> --displays - Oct 17, 1950
+<h2>{{dob | date : 'mediumTime'}}</h2> --displays - 12:00:00 AM
+
+<h2> Long Date</h2>
+
+<h2>{{dob | date : 'long'}}</h2> --displays October 17, 1950 at 12:00:00 AM GMT+5
+<h2>{{dob | date : 'longDate'}}</h2> --displaysOctober 17, 1950
+<h2>{{dob | date : 'longTime'}}</h2>--displays 12:00:00 AM GMT+5
 
 
 
