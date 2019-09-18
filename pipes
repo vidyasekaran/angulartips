@@ -2,6 +2,9 @@ Pipes allows us to transform data before displaying them on the screen.
 
 Some of the buildin pipes angular provides.
 
+STRING Pipe
+---------
+
 name = "codevolution";
 
 a. Transform name value to lowercase
@@ -16,6 +19,81 @@ c. Transform name value to TitleCase - displays first letter of every word in ca
 d. Returns a String starting from index 3 -  so "codevolution become  evolution"   
    <h2 > {{ name | slice:3 }}</h2>
    
+   Returns a String starting from index 3 to 5 -  so "codevolution become  ev"   
+   <h2 > {{ name | slice:3:5 }}</h2>
+
+
+JSON Pipe (Display Address.ts  in JSON and Array of Address.ts  in JSON FORMAT)
+-------------------------------------------------------------------------------
+
+1. Define name.ts 
+
+export class Name {
+    constructor(public fname:string, public lname:string) {
+    }
+}  
+
+
+2. Define person.ts
+
+import {Name} from './name';
+import {Address} from './address';
+export class Person {
+    constructor(public id:number, public pname:Name, 
+	                     public dob:Date, public address:Address) {
+    }
+} 
+
+3. Define Address.ts
+
+export class Address {
+    
+    constructor(public vill:string, public district:string, public country:string) {
+    }
+}  
+
+
+4. Define in app.component.ts 
+
+export class AppComponent {
+   address1 = new Address('Dhananjaypur', 'Varanasi', 'India');
+	address2 = new Address('Moonsi', 'Bhadohi', 'India');
+   
+	addressArray = [this.address1, this.address2];
+ 
+ }
+ 
+5. Define in app.component.html 
+
+<pre> {{address1 | json}} </pre>
+<pre> {{addressArray | json}} </pre>  or <pre> <div [innerHTML]="addressArray | json"></div> </pre> 
+ 
+
+6. Displays in Output
+
+ {
+  "vill": "Dhananjaypur",
+  "district": "Varanasi",
+  "country": "India"
+} 
+
+
+[
+  {
+    "vill": "Dhananjaypur",
+    "district": "Varanasi",
+    "country": "India"
+  },
+  {
+    "vill": "Moonsi",
+    "district": "Bhadohi",
+    "country": "India"
+  }
+]
+
+
+URL Reference : https://www.youtube.com/watch?v=y8lwG8IM82k&list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ&index=16
+https://www.concretepage.com/angular-2/angular-2-json-pipe-example#jsonpipe
    
    
    
