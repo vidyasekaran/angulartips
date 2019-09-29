@@ -1,0 +1,72 @@
+Angular 5 Projects_ Learn to Build Single Page Web Applications Using 70+ Projects
+----------------------------------------------------------------------------------
+
+One-Way Data Binding: Display a image (Example Code components-ex200)
+---------------------------------------------------------------------
+
+The square braces can be used for one-way binding. With these you can bind a template expression, 
+
+[Data Binding Target] = "Template Expression"
+ 
+Example1:
+
+<img src="starUrl">
+
+export class AppComponent {
+ starUrl = 'https://developer.mozilla.org/samples/cssref/images/starsolid.gif';
+}
+
+
+Markup Description
+-------------------
+
+1. <img [src] = "imageUrl">   - Sets image source to property imageUrl in the Model.
+
+2. <div [ngClass] ="{selected: isSelected}"></div> - Sets CSS class according to property isSelected in the Model.
+
+3. <car-detail [car]="selectedCar"></car-detail> - Sets the car attribute of the car-detail to property selectedCar in the Model. 
+The car-detail could be a component, and this would pass information from the current template to that component using the car attribute.
+
+4. <button [style.color]= "isSpecial ? 'red' :'green'">Sets the button color according to property isSpecial in the Model.
+
+Reference : https://codecraft.tv/courses/angular/built-in-directives/ngstyle-and-ngclass/
+
+-----------------------------
+
+II) One-Way Data Binding: Example Code components-ex250 -Display list some cars and let you click the View button to view abt car.
+
+app.component.ts
+----------------
+
+_cars = [
+  new Car('car1', 2002, 'bmw', 'm3','https://en.wikipedia.org/wiki/BMW_M3'),
+  new Car('car2', 2017, 'acura', 'nsx','https://en.wikipedia.org/wiki/Honda_NSX'),
+  new Car('car3', 2016, 'chevy', 'camaro','https://en.wikipedia.org/wiki/Chevrolet_Camaro')
+  ];
+  
+ showCar(event)
+  {
+    const desc = event.target.parentElement.dataset.desc;
+    
+    if (window.confirm('If you click "ok" you would be redirected to an article about the ' +  desc + '. Cancel will load this website '))
+    {
+    window.location.href=event.target.parentElement.dataset.article;
+    };
+  }
+  
+  
+  app.component.html
+  ------------------
+  <ul> 
+    <li *ngFor="let car of _cars">
+      <span [attr.id]="car.id" [attr.data-desc]="car.make + ' ' + car.model" [attr.data-article]="car.article">
+        {{car.year}}&nbsp;
+        {{car.make}}&nbsp;
+        {{car.model}}&nbsp;
+      <button (click)="showCar($event)">View</button></span>
+   </li>
+  </ul>
+  
+  Start from 110 Angular 5 Projects_ Learn to Build Single Page Web Applications Using 70+ Projects
+  
+  
