@@ -70,3 +70,52 @@ _cars = [
   Start from 110 Angular 5 Projects_ Learn to Build Single Page Web Applications Using 70+ Projects
   
   
+  3. Two-Way Data Binding with [( and )] explained using ngStyle. 
+  
+  [(Data Binding Target)] = "Property"
+  
+  Foreground: <input [(ngModel)]="fg" />
+  Background: <input [(ngModel)]="bg" />
+   
+  <div [ngStyle]="{'color': fg, 'background-color': bg,'padding': '5px'}"> Test </div>
+ 
+  export class AppComponent { fg = "#ffffff"; bg = "#000000"; }
+   
+Your app should be working at localhost:4200. When the user changes the color value, this updates the Model, which 
+then updates the template’s HTML:
+
+• Binding occurs from the input field to the Model (when the user changes the color values). When the input field changes, the Model
+updates to match.
+• Binding occurs from the Model to the template’s HTML. When the Model updates, the template’s HTML updates to match.
+
+
+4. Event Handling
+
+(Target Event) = "Template Statement"
+
+“Target Event” is the name of the event in-between the brackets. “Template Statement” is an instruction 
+on what to do when the target event occurs. The event information is available in the $event variable, 
+which may or may not be utilized.
+
+
+A template variable #input and viewChild are used to get a reference to the input box. After the view is initialized (lifecycle method
+ngAfterViewInit is fired), focus is set to the input box.
+
+<input #input type="text" (input)="textInput($event)" value=""/>
+
+ upperCase: any;
+  lowerCase: any;
+  inputBox: any;
+  
+ @ViewChild('input', {static: false}) input: ElementRef;
+textInput(event)
+{ 
+this.upperCase = event.target.value.toUpperCase(); 
+this.lowerCase = event.target.value.toLowerCase();
+}
+
+ ngAfterViewInit() {
+ this.inputBox.nativeElement.focus()
+ }
+
+ ngAfterViewInit() { this.inputBox.nativeElement.focus() }
