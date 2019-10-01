@@ -119,4 +119,62 @@ this.lowerCase = event.target.value.toLowerCase();
  }
 
  ngAfterViewInit() { this.inputBox.nativeElement.focus() }
+ 
+ 
+ Directives
+ 
+ Directives are markers on DOM elements that tells angular to attach a specific behaviour to an existing element.
+ 
+ Angular includes several structural directives for you to use in the template:
+ 
+• NgIf  - This is a directive that you add to an element in the markup, usually to a container
+element like a div. If the template expression for the ngIf is true, then the content inside
+the element is included in the view DOM after the bindings have been completed. If the
+template expression for the ngIf is false, then the content inside the element is excluded
+from the view DOM after the bindings have been completed.
+
+In this example (directives-ex100), we toggle between showing a name and an address, as shown in Figure 11-1.
+
+showName: boolean = true;
+ toggle(){
+ this.showName = !this.showName;
+ }
+
+
+<div *ngIf="this.showName" class="box">
+  Name: Mark
+ </div>
+ <div *ngIf="!this.showName" class="box">
+  Address: Atlanta
+ </div>
+ <button (click)="this.toggle()">Toggle</button>
+ 
+
+• NgFor
+
+• NgSwitch - ngSwitch is a directive for adding or removing DOM elements when they match switch expressions. 
+It’s known as a structural directive because it can change the DOM layout by adding and removing view DOM elements.
+
+• NgSwitchWhen - 
+
+• NgSwitchDefault
+
+Angular also includes several non-structural directives for use in the template:
+
+• NgClass - We can the change the appearance of DOM elements by adding or removing classes
+using this directive. Its argument is an object that contains pairs of the following:
+
+                  • A CSS class name
+                  • An expression
+                  
+The CSS class name is added to the target DOM element if the expression is true—
+otherwise it’s omitted. It is not just useful for setting a CSS class. It’s probably easier to
+use something like the following code:
+<div [class]="classNames">Customer {{name}}.</div>
+
+• NgStyle - This is a directive for setting the CSS styles of an element.
+• NgControlName
+• NgModel
+
+ 
 
