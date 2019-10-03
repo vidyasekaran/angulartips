@@ -60,3 +60,36 @@ Book and code present in "angularbooks\bootstrap-angular\Bootstrap-4 Responsive-
 For each chapter the Video is present in https://www.packtpub.com/web-development/learn-bootstrap-4-responsive-web-development-video
 
 
+1. How to set  background color
+
+  a. Have tb.component.css 
+
+.red   { color: white;background-color: red; }
+.green { color: white;background-color: green;}
+.blue  {color: white;background-color: blue;}
+ 
+ b. In html 
+ 
+  <html lang="en">
+   <body>
+    <div class="container">  - container is to group
+      <div class="row">      -  row also is to group
+        <div class="col-xs-4 red"> - xs for very small device
+          Hello world
+        </div>
+
+        <div class="col-xs-4 green">
+          Hello world
+        </div>
+
+        <div class="col-xs-4 blue">
+          Hello world
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
+
+    
+
