@@ -96,3 +96,59 @@ For each chapter the Video is present in https://www.packtpub.com/web-developmen
 Understanding the grid system (https://leonmercanti.com/books/web-development/Bootstrap-4%20Responsive-Web-Design-_2017_.pdf)
 
 Learn from Building our scaffolding to Finishing the grid. 
+
+<div class="container">
+<div class="row">
+<header class="col-md-12">
+HEADER
+</header>
+</div>
+</div>
+
+The hierarchy for the grid system always follows the sequence of a container that wraps rows and
+multiple columns. Keep in mind to always use this sequence to get a proper output.
+
+Now that we have our .container with the first .row, let's create our first column. Every row is
+subdivided into 12 parts, so you can have up to 12 columns in a single row.
+
+To identify a column, we must follow the template of .col-*-*. The first asterisk means the viewport for
+the column, and the other one means the size of the column. We will explain more about that, but to create
+our first column, we create a column identified by .col-md-12 inside our row:
+
+
+In this column, the md in.col-md-12 means that for the viewport medium (which means the md identifier),
+the column must have a 12-column width. In other words, the column fills the entire width of this row.
+This column will fill the complete width because it is our header, and as we can see in the previous
+image, this row is composed of just a single row.
+
+
+Refer PAge 63 in (https://leonmercanti.com/books/web-development/Bootstrap-4%20Responsive-Web-Design-_2017_.pdf)
+
+
+Now, to make the gray area, we will use a class in Bootstrap called .jumbotron. The jumbotron is a
+flexible Bootstrap component that can extend to the entire viewport to showcase some content, in this case
+the header. So, wrap the container inside a div.jumbotron:
+<div class="jumbotron">
+<div class="container">
+<!-- row 1 -->
+<div class="row">
+<header class="col-md-12">
+</header>
+</div>
+</div>
+</div>
+
+
+Start from PAge 64.
+
+
+
+
+
+
+
+You can easily switch the actual example grid with a fluid full-width layout. To do so, replace the farthest
+.container with .container-fluid:
+<div class="container-fluid">
+…
+</div>
