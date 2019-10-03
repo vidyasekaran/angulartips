@@ -1,0 +1,57 @@
+
+
+Installed bootstrap followed 2 sites
+
+1.https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap
+
+npm i @ng-bootstrap/ng-bootstrap updated "angular.json" the below
+
+"styles": [
+  "node_modules/bootstrap/dist/css/bootstrap.min.css"
+]
+
+npm install --save @ng-bootstrap/ng-bootstrap
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+ 
+@NgModule({
+  ...
+  imports: [NgbModule, ...],
+  ...
+})
+export class YourAppModule {
+}
+
+Alternatively you could only import modules with components you need, ex. pagination and alert. 
+-----------------------------------------------------------------------------------------------
+The resulting bundle will be smaller in this case.
+--------------------------------------------------
+
+import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+ 
+@NgModule({
+  ...
+  imports: [NgbPaginationModule, NgbAlertModule, ...],
+  ...
+})
+export class YourAppModule {
+}
+
+
+
+Component development
+---------------------
+
+2.https://ng-bootstrap.github.io/#/components/table/examples
+
+Steps
+Create a component > ng g c tb 
+
+Created table using refer example :  table-basic.html and table-basic.ts
+------------------------------------------------------------------------
+
+https://ng-bootstrap.github.io/#/components/table/examples
+
+
+
+
