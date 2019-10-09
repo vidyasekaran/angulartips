@@ -197,3 +197,7 @@ a directive for a tooltip. You create the directive, you add the directive selec
 HTML or the templates that use it, and it delivers the functionality (you will need to add
 imports as well).
 
+
+Practise @Input , @Output provided in page prior to 166 in book (angular 5 projects_learn to build spa 70+) and 
+composition - Let’s use the Angular CLI to create a crude example of a component that contains other
+components - Page 166.
