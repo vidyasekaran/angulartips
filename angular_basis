@@ -177,4 +177,23 @@ use something like the following code:
 • NgModel
 
  
+ Directives and components
+ -------------------------
+ 
+1. Directives and components are both Angular objects that correspond to elements in
+the markup and can modify the resulting user interface. They both have selectors. The
+selector is used to identify the component or directive that’s associated with markup in
+the web page or a template.
+
+2. Directives and components both have annotations. Directives have the @Directive
+annotation, and Components have the @Component annotation.
+
+3. However Directives and components aren’t completely the same. 
+A component requires a view, for example, whereas a directive doesn’t. 
+
+Directives don’t have a template. There’s no bundled HTML markup that’s used to render the element.
+Directives add behavior to an existing DOM element. For example, you could add
+a directive for a tooltip. You create the directive, you add the directive selector to the
+HTML or the templates that use it, and it delivers the functionality (you will need to add
+imports as well).
 
